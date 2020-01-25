@@ -1,0 +1,37 @@
+<html>
+
+<head>
+
+<script>
+var inputString = takeInput("Enter any string value","e.g. this iS gOiNg to be fUn");
+        var wordsContainer = inputString.split(" ");
+        var firstChar, remainingChars, inputString = "";
+        for (var i = 0; i < wordsContainer.length; i++){
+            firstChar = wordsContainer[i].charAt(0).toUpperCase();
+            remainingChars = wordsContainer[i].slice(1).toLowerCase();
+            wordsContainer.splice(i,1,firstChar +remainingChars);
+            inputString = inputString.concat(wordsContainer[i]," ");
+        }
+        console.log(inputString);
+        function takeInput(phrase,placeholder){
+            userInput = prompt(phrase, placeholder);
+            if(userInput === "" || userInput === " " || userInput === placeholder){
+                takeInput();
+            }
+            return userInput.trim();
+        }
+
+
+</script>
+
+</head>
+
+
+<body>
+
+
+</body>
+
+
+</html>
+
